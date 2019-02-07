@@ -10,11 +10,41 @@ public class Assignment1 {
     }
 
     public int[][] sum(int[][] A, int[][] B, int x1, int y1, int x2, int y2, int n) {
-        return A;
+
+        int[][] sum = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+
+            int yA = y1, yB = y2;
+
+            for (int j = 0; j < n; j++) {
+                sum[i][j] = A[x1][yA] + B[x2][yB];
+                yA++;
+                yB++;
+            }
+            x1++;
+            x2++;
+        }
+        return sum;
     }
 
     public int[][] sub(int[][] A, int[][] B, int x1, int y1, int x2, int y2, int n) {
-        return A;
+
+        int[][] sub = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+
+            int yA = y1, yB = y2;
+
+            for (int j = 0; j < n; j++) {
+                sub[i][j] = A[x1][yA] - B[x2][yB];
+                yA++;
+                yB++;
+            }
+            x1++;
+            x2++;
+        }
+        return sub;
     }
 
 
@@ -24,16 +54,16 @@ public class Assignment1 {
 
     public void printMatrix(int n, int[][] A) {
 
-        String s="";
+        String s = "";
 
         for (int i = 0; i < n; i++) {
 
             for (int j = 0; j < n; j++) {
-                s+=A[i][j]+" ";
+                s += A[i][j] + " ";
             }
 
             System.out.println(s);
-            s="";
+            s = "";
         }
     }
 
